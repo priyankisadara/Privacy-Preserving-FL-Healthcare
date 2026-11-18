@@ -1,0 +1,81 @@
+[
+    {
+        "round": 0,
+        "test_loss": 0.6844557370894995,
+        "test_accuracy": 0.5608974358974359,
+        "test_auroc": 0.8004054350208196,
+        "test_f1": 0.5497930337149658,
+        "train_loss": 0.0,
+        "epsilon": 0.0
+    },
+    {
+        "round": 1,
+        "train_loss": 0.6771321299452416,
+        "test_loss": 1.4362731958046937,
+        "test_accuracy": 0.625,
+        "test_auroc": 0.7149791803637958,
+        "test_f1": 0.38461538461538464,
+        "test_precision": 0.3125,
+        "test_recall": 0.5,
+        "optimal_threshold": 0.9796270132064819,
+        "optimal_accuracy": 0.6762820512820513,
+        "optimal_f1": 0.6705936464463795,
+        "epsilon": 5.067146959781498
+    },
+    {
+        "round": 2,
+        "train_loss": 1.0770904983807283,
+        "test_loss": 1.2342664156204615,
+        "test_accuracy": 0.625,
+        "test_auroc": 0.8400613631382862,
+        "test_f1": 0.38461538461538464,
+        "test_precision": 0.3125,
+        "test_recall": 0.5,
+        "optimal_threshold": 0.9668616652488708,
+        "optimal_accuracy": 0.780448717948718,
+        "optimal_f1": 0.7721626267606572,
+        "epsilon": 5.067146959781498
+    },
+    {
+        "round": 3,
+        "train_loss": 0.9891411060474052,
+        "test_loss": 1.2082875814193335,
+        "test_accuracy": 0.625,
+        "test_auroc": 0.8496164803857112,
+        "test_f1": 0.38461538461538464,
+        "test_precision": 0.3125,
+        "test_recall": 0.5,
+        "optimal_threshold": 0.9708348512649536,
+        "optimal_accuracy": 0.7676282051282052,
+        "optimal_f1": 0.7650791507746313,
+        "epsilon": 5.067146959781498
+    },
+    {
+        "round": 4,
+        "train_loss": 0.9391116601925453,
+        "test_loss": 1.149299756074563,
+        "test_accuracy": 0.625,
+        "test_auroc": 0.8793118562349331,
+        "test_f1": 0.38461538461538464,
+        "test_precision": 0.3125,
+        "test_recall": 0.5,
+        "optimal_threshold": 0.9666475653648376,
+        "optimal_accuracy": 0.8044871794871795,
+        "optimal_f1": 0.7991197238846142,
+        "epsilon": 5.067146959781498
+    },
+    {
+        "round": 5,
+        "train_loss": 0.9252345648042543,
+        "test_loss": 1.1451978041575506,
+        "test_accuracy": 0.625,
+        "test_auroc": 0.8865658557966251,
+        "test_f1": 0.38461538461538464,
+        "test_precision": 0.3125,
+        "test_recall": 0.5,
+        "optimal_threshold": 0.9724364280700684,
+        "optimal_accuracy": 0.7980769230769231,
+        "optimal_f1": 0.7947025401069518,
+        "epsilon": 5.067146959781498
+    }
+]

@@ -1,0 +1,48 @@
+# Privacy-Preserving Federated Learning Configuration
+
+project:
+  name: "Privacy-Preserving Federated Learning for Healthcare"
+  version: "1.0.0"
+  random_seed: 42
+
+# Healthcare Dataset Configuration
+dataset:
+  name: "pneumoniamnist"      # Options: pneumoniamnist, breastmnist, heart_disease
+  data_dir: "./data/raw"
+  num_classes: 2
+  in_channels: 1              # Grayscale for PneumoniaMNIST
+  image_size: 28              # 28x28 resolution
+
+# Client & Federation Setup
+federation:
+  num_clients: 5              # Simulating 5 hospital nodes
+  num_rounds: 15              # Number of communication rounds
+  clients_per_round: 5        # Participation rate (100% = 5/5)
+  strategy: "FedAvg"          # Options: "FedAvg", "FedProx"
+  fedprox_mu: 0.005           # Proximal term weight for non-IID drift control
+
+# Local Training Hyperparameters at Hospital Nodes
+local_training:
+  epochs: 2                   # 2 local epochs prevents client drift in Non-IID
+  batch_size: 32
+  learning_rate: 0.0005       # Stable learning rate for federated CNN
+  optimizer: "Adam"           # "Adam" or "SGD"
+  weight_decay: 0.0001
+
+# Non-IID Data Heterogeneity (Dirichlet Partitioning)
+distribution:
+  type: "dirichlet"           # "iid" or "dirichlet"
+  dirichlet_alpha: 0.5        # Low alpha (<1.0) = high clinical skew; High alpha = near IID
+
+# Differential Privacy (DP-SGD via Opacus)
+differential_privacy:
+  enabled: true
+  target_epsilon: 5.0         # Target privacy budget ε
+  target_delta: 0.00001       # Privacy loss probability δ (typically 1e-5)
+  max_grad_norm: 1.5          # Calibrated gradient clipping threshold C
+  noise_multiplier: 0.8       # Calibrated Gaussian noise multiplier for high accuracy
+
+# Secure Aggregation (SecAgg)
+secure_aggregation:
+  enabled: true
+  type: "additive_masking"    # Pairwise zero-sum secret sharing

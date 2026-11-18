@@ -1,0 +1,52 @@
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.mypy_cache/
+
+# Datasets & Large Raw Data
+data/raw/
+*.npz
+*.tar.gz
+*.zip
+*.csv
+
+# Deep Learning Checkpoints & Weights (Optional: comment out if you want to track pre-trained models)
+*.pt
+*.pth
+*.onnx
+*.bin
+
+# LaTeX Build Intermediates (if compiled locally)
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+
+# IDE & Editor Artifacts
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Task & Agent Logs
+brain/
+.gemini/
