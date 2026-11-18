@@ -70,21 +70,19 @@
     \vspace{0.2cm}
     {\normalsize Submitted By \par}
     \vspace{0.3cm}
-    {\large \bfseries Priyank Isadara (PRN: 22070144000) \par}
+    {\large \bfseries Priyank Isadara (PRN: 26070149039) \par}
     
     \vspace{0.8cm}
     
     {\large \bfseries UNDER THE GUIDANCE OF \par}
     \vspace{0.2cm}
-    {\large \bfseries [Guide Name] \par}
-    {\normalsize Assistant Professor \par}
+    {\large \bfseries Dr. Aniket Shahade \par}
     
     \vspace{0.7cm}
     
     \includegraphics[width=0.82\textwidth]{sit_logo.png} \par
     \vspace{0.3cm}
     {\normalsize Pune -- 412115, Maharashtra State, India \par}
-    {\small \url{https://www.sitpune.edu.in/} \par}
     
     \vspace{0.5cm}
     
@@ -95,54 +93,7 @@
     {\large \bfseries AY 2026-27 \par}
 \end{titlepage}
 
-% ----------------------------------------------------------------------
-% Certificate & Declaration Pages
-% ----------------------------------------------------------------------
-\newpage
-\pagenumbering{roman}
-\section*{Certificate of Approval}
-\addcontentsline{toc}{chapter}{Certificate of Approval}
-This is to certify that the project report entitled \textbf{``Privacy-Preserving Federated Learning for Healthcare: A Decentralized Framework with Differential Privacy and Secure Aggregation''} submitted by \textbf{Priyank Isadara (PRN: 22070144000)} to the \textbf{Department of Artificial Intelligence \& Machine Learning}, \textbf{Symbiosis Institute of Technology, Pune Campus, Symbiosis International (Deemed University), Pune, India}, is a bona fide record of independent research work carried out under our supervision and guidance in partial fulfillment of the requirements for the award of the degree of \textbf{Master of Technology in Artificial Intelligence \& Machine Learning}.
 
-\vspace{2.5cm}
-\noindent
-\begin{minipage}{0.48\textwidth}
-    \rule{\textwidth}{0.4pt}\\
-    \textbf{[Guide Name]}\\
-    \textit{Project Supervisor}\\
-    Assistant Professor\\
-    Department of AI \& ML\\
-    Symbiosis Institute of Technology, Pune
-\end{minipage}
-\hfill
-\begin{minipage}{0.45\textwidth}
-    \rule{\textwidth}{0.4pt}\\
-    \textbf{Head of Department}\\
-    Department of AI \& ML\\
-    Symbiosis Institute of Technology, Pune
-\end{minipage}
-
-\newpage
-\section*{Declaration}
-\addcontentsline{toc}{chapter}{Declaration}
-I, \textbf{Priyank Isadara (PRN: 22070144000)}, hereby declare that the research work presented in this project report entitled \textbf{``Privacy-Preserving Federated Learning for Healthcare: A Decentralized Framework with Differential Privacy and Secure Aggregation''} is my original work conducted at the \textbf{Symbiosis Institute of Technology, Pune Campus, Symbiosis International (Deemed University), Pune, India}, under the guidance of \textbf{[Guide Name]}.
-
-I confirm that:
-\begin{enumerate}
-    \item This work has not been previously submitted in part or full for any degree, diploma, or academic award at this or any other university or institution.
-    \item All scholarly sources, literature, theoretical concepts, and benchmark datasets utilized in this report have been properly credited and cited in compliance with IEEE referencing standards.
-    \item The document adheres strictly to the academic integrity and plagiarism guidelines ($<10\%$ similarity index).
-\end{enumerate}
-
-\vspace{2.2cm}
-\noindent
-\begin{flushright}
-    \textbf{Priyank Isadara}\\
-    PRN: 22070144000\\
-    Department of Artificial Intelligence \& Machine Learning\\
-    Symbiosis Institute of Technology, Pune Campus\\
-    Symbiosis International (Deemed University), Pune, India
-\end{flushright}
 
 % ----------------------------------------------------------------------
 % 2. Abstract (150–250 words)
@@ -151,34 +102,22 @@ I confirm that:
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
 
-Collaborative machine learning across multi-institutional healthcare ecosystems offers enormous potential for automated clinical diagnosis, yet statutory regulations including HIPAA and GDPR prohibit central pooling of patient records. This project presents an end-to-end Privacy-Preserving Federated Learning (PPFL) framework that enables decentralized medical diagnostic model training across heterogeneous hospital centers without sharing local electronic health records or medical imaging data. 
+Privacy-preserving machine learning among multi-institutional healthcare ecosystems promises significant promise for automated clinical diagnostics, but statutory laws such as HIPAA and GDPR prevent aggregation of individual patient records. Our work introduces an end-to-end Privacy-Preserving Federated Learning (PPFL) architecture, which allows the decentralized training of a diagnostic model without exchanging personal electronic health records or medical images between multiple hospital centers.
 
-To simultaneously defend against honest-but-curious server inspection and reconstruction attacks, our framework unifies Differentially Private Stochastic Gradient Descent (DP-SGD) with cryptographic Secure Aggregation (SecAgg). We identify and resolve a critical mathematical anomaly wherein standard pairwise masking fails under weighted federated averaging, establishing a provably zero-sum weighted masking protocol. Statistical data heterogeneity across hospitals is modeled using Dirichlet distribution parameterization ($\alpha \in [0.1, 0.5]$), coupled with clinical data augmentation and inverse-frequency class weighting to resolve severe diagnostic imbalance. 
+In order to be resilient to both honest-but-curious inspection and reconstruction attacks, our system combines Differentially Private Stochastic Gradient Descent (DP-SGD) with the cryptographic technique of Secure Aggregation (SecAgg). We highlight and solve an important mathematical issue where traditional pairwise masking does not hold when applied to the weighted average case, proposing a zero-sum masking procedure in a provable manner. Heterogeneity in statistical data among hospitals is modeled via the Dirichlet distribution parameters $\alpha \in [0.1, 0.5]$, complemented by clinical data augmentation and inverse-frequency class weights for handling imbalance in diagnoses. 
 
-Evaluated on the benchmark MedMNIST PneumoniaMNIST dataset ($4{,}708$ training images, $624$ test images), the proposed architecture achieves a peak global test accuracy of \textbf{86.86\%}, an Area Under the ROC Curve (AUROC) of \textbf{0.9273}, a Macro F1-score of \textbf{0.8603}, with balanced diagnostic precision (\textbf{0.8591}) and recall (\textbf{0.8615}). Under rigorous Differential Privacy ($\epsilon \le 5.07, \delta = 10^{-5}$), the system preserves diagnostic utility while guaranteeing formal mathematical privacy. An interactive dashboard was developed for real-time monitoring of demographic skew and clinical inference. This work delivers a viable blueprint for secure, distributed diagnostic intelligence across multi-hospital networks.
+Using the standard MedMNIST PneumoniaMNIST dataset ($4{,}708$ training samples, $624$ test samples), the proposed framework attains a maximum test accuracy of \textbf{86.86\%}, an Area Under the Receiver Operating Characteristic (AUROC) of \textbf{0.9273}, and a Macro F1-Score of \textbf{0.8603}. In addition to ensuring balanced diagnostic precision (\textbf{0.8591}) and recall (\textbf{0.8615}), under strict Differential Privacy constraints ($\epsilon \le 5.07, \delta = 10^{-5}$), the framework preserves diagnostic capability and ensures mathematical privacy guarantees. An interactive dashboard was constructed for monitoring skewness and inference.
 
 \vspace{0.8cm}
 % ----------------------------------------------------------------------
 % 3. Keywords (4–6 keywords)
 % ----------------------------------------------------------------------
-\noindent \textbf{Keywords:} Federated Learning, Healthcare AI, Differential Privacy, Secure Aggregation, Medical Image Diagnostics, Non-IID Data.
+\noindent \textbf{Keywords:} Federated Learning, Artificial Intelligence for Healthcare, Differential Privacy, Secure Aggregation, Medical Imaging Diagnosis, Non-IID Data.
 
 % ----------------------------------------------------------------------
 % Acknowledgements & Table of Contents
 % ----------------------------------------------------------------------
-\newpage
-\chapter*{Acknowledgements}
-\addcontentsline{toc}{chapter}{Acknowledgements}
-I express my deepest gratitude to my project supervisor for their invaluable intellectual guidance, continuous encouragement, and constructive critique throughout the conceptualization, mathematical formulation, and experimental realization of this research project. 
-
-I extend my heartfelt thanks to the faculty and leadership at the \textbf{Department of Computer Science and Engineering, Symbiosis Institute of Technology, Pune Campus}, and \textbf{Symbiosis International (Deemed University), Pune, India}, for providing state-of-the-art computational infrastructure, research resources, and an academically stimulating research environment. 
-
-Finally, I express my sincere appreciation to my family and colleagues whose unwavering moral support and encouragement were vital to the successful completion of this M.Tech dissertation.
-
-\newpage
-\tableofcontents
-
-\newpage
+\pagenumbering{roman}
 \listoffigures
 
 \newpage
@@ -193,56 +132,55 @@ Finally, I express my sincere appreciation to my family and colleagues whose unw
 \label{chap:intro}
 
 \section{Overview of the Topic Area}
-Modern healthcare and clinical diagnostics are undergoing a monumental transformation driven by artificial intelligence (AI) and deep neural networks. Automated diagnostic systems trained on radiological modalities---such as digital chest radiography (X-rays), computed tomography (CT), and magnetic resonance imaging (MRI)---have shown remarkable efficacy in detecting pathologies ranging from acute viral and bacterial pneumonia to oncological lesions and neurodegenerative disorders. The diagnostic accuracy and clinical reliability of these algorithms depend fundamentally on the diversity, volume, and demographic breadth of their training data.
+The modern era of healthcare and diagnostic services is witnessing an immense transformation brought about by the use of artificial intelligence and deep neural networks. Diagnostic programs designed using automated algorithms through radiologic imaging methods like digital chest X-ray, CT, and MRI have shown exceptional effectiveness in diagnosing cases involving acute viral/bacterial pneumonia, cancers, and neurodegenerative diseases. The performance and reliability of such algorithms rely largely on the diversity and volume of training data used in their development.
 
-Traditionally, training deep learning systems requires centralizing massive volumes of clinical data into a consolidated database or cloud infrastructure. In the medical sector, however, patient health records (EHR) and diagnostic images represent intensely private, regulated information. Regulatory statutes, including the Health Insurance Portability and Accountability Act (HIPAA) in the United States and the General Data Protection Regulation (GDPR) in the European Union, impose stringent civil and criminal penalties for unauthorized patient data transfer. In India, the Digital Personal Data Protection (DPDP) Act imposes equally rigorous requirements on data fiduciaries handling sensitive personal data. Consequently, healthcare institutions operate as isolated ``data silos,'' unable to share data across hospital networks. Machine learning models trained exclusively on local data suffer from severe overfitting, lack of demographic generalization, and vulnerability to clinical distribution shifts.
-
+Conventionally, training deep learning algorithms involves the consolidation of huge amounts of clinical data in databases or clouds. In the health sector, health records and radiological images are private, regulated clinical data. Health Insurance Portability and Accountability Act (HIPAA) in the USA and General Data Protection Regulation (GDPR) in the EU have legal and civil penalties that include imprisonment and hefty fines for any unauthorized transfer of patient data. Similarly, the Digital Personal Data Protection (DPDP) law in India imposes equally stringent rules for data fiduciaries processing sensitive personal data. This has led to a situation where hospitals operate in silos because no hospital can share their patient data across hospital networks due to these regulations.
 \section{Motivation Behind the Work}
-The central dilemma in digital healthcare AI is: \emph{How can multiple independent healthcare institutions collaboratively train high-accuracy clinical diagnosis models without transferring, exposing, or centralizing sensitive patient records?}
+The key challenge in digital health care applications of AI is: \emph{What mechanism enables different autonomous health care organizations to learn an accurate clinical diagnosis model without sharing the sensitive patient data?}
 
-Federated Learning (FL), established as a mainstream decentralized paradigm~\cite{kairouz2021advances, li2021survey}, coordinates decentralized client gradient updates through central parameter aggregation. Instead of pooling raw patient data at a central location, the computation is decentralized: each hospital node receives a global model, trains it locally on its proprietary clinical cohort, and transmits only model parameter updates (weight tensors or gradient updates) back to a coordinating central server. The central server averages these parameters to synthesize a globally superior diagnostic model.
+Federated Learning (FL), which is widely accepted as one of the main paradigms of decentralization~\cite{kairouz2021advances, li2021survey}, performs aggregation of decentralized client gradient updates using central parameters aggregation. In other words, rather than collecting patient information centrally, the process of learning is decentralized such that each hospital node learns the global model, performs learning of the model on the local patient population, and then sends the updated parameters of the model to the central server.
 
-However, subsequent research has demonstrated that raw federated learning is \emph{not inherently private}. Intermediate model gradients can leak substantial sensitive information. Adversaries can mount \textbf{gradient inversion attacks}~\cite{geiping2020inverting, yin2021see} to reconstruct high-fidelity patient radiographs from gradient vectors, or execute \textbf{membership inference attacks}~\cite{nasr2021inference} to determine whether a specific patient was treated at a given medical center. Hence, true clinical deployment mandates the integration of rigorous privacy-preserving mechanisms:
+However, studies have found out that raw federated learning is \emph{not necessarily private} either. The gradients of intermediate models can be exploited for revealing sensitive data. By using the \textbf{gradient inversion attacks}~\cite{geiping2020inverting, yin2021see}, an adversary can recreate a high-resolution radiograph of a patient through the use of gradient vectors, or conduct \textbf{membership inference attacks}~\cite{nasr2021inference} in order to infer whether a certain patient was admitted to a certain medical facility.
 \begin{enumerate}
-    \item \textbf{Differential Privacy (DP):} Adding calibrated stochastic perturbation to model gradients so that no single patient's record disproportionately influences the published model parameters.
-    \item \textbf{Cryptographic Secure Aggregation (SecAgg):} Zero-knowledge or secret-shared multi-party computation protocols that prevent the central coordinating server from inspecting individual institutional updates.
+   \item \textbf{Differential Privacy (DP)}: Calibrated stochastic perturbation to the model gradients such that no patient’s data is significantly weighted in the released model parameters.
+    \item \textbf{Cryptographic Secure Aggregation (SecAgg)}: ZKP or secret-sharing multi-party computing techniques that ensure the coordinating server cannot look at each hospital’s update.
 \end{enumerate}
 
 \section{Problem Definition}
-This project addresses the design and implementation of a robust, privacy-preserving federated machine learning framework for multi-hospital diagnostic networks. Formally, consider $K$ healthcare institutions (hospital clients) $\mathcal{C}_1, \mathcal{C}_2, \dots, \mathcal{C}_K$, where hospital $\mathcal{C}_k$ possesses a private local dataset $\mathcal{D}_k = \{(x_i^k, y_i^k)\}_{i=1}^{n_k}$ of diagnostic chest radiographs $x_i^k \in \mathcal{X}$ and diagnostic labels $y_i^k \in \mathcal{Y}$. The institutions aim to solve the collaborative empirical risk minimization problem:
+This study focuses on the development of a federated learning framework that is both robust and secure to be used in a multiple hospitals’ diagnostic network. Mathematically, we will consider K healthcare organizations (clients-hospitals) $\mathcal{C}_1, \mathcal{C}_2, \dots, \mathcal{C}_K$, with each hospital $\mathcal{C}_k$ having their own private dataset $\mathcal{D}_k = \{(x_i^k, y_i^k)\}_{i=1}^{n_k}$ of diagnostic chest x-ray images $x_i^k \in \mathcal{X}$ and their respective labels $y_i^k \in \mathcal{Y}$. They have to jointly solve the following problem:
 \begin{equation}
     \min_{w \in \mathbb{R}^d} f(w) = \sum_{k=1}^K \frac{n_k}{N} F_k(w) \quad \text{where} \quad F_k(w) = \frac{1}{n_k} \sum_{i \in \mathcal{D}_k} \ell(w; x_i^k, y_i^k)
 \end{equation}
-subject to the constraints that:
+subject to the restrictions that:
 \begin{enumerate}
-    \item Raw patient data $\mathcal{D}_k$ never leaves the physical boundary of institution $\mathcal{C}_k$.
-    \item The parameter updates from $\mathcal{C}_k$ transmitted to the central aggregator satisfy $(\epsilon, \delta)$-Differential Privacy.
-    \item The central server observes only the global sum $\sum_{k=1}^K \frac{n_k}{N} w^k$ without inspecting any individual local model vector $w^k$ (guaranteed by Secure Aggregation).
-    \item The global model maintains high diagnostic efficacy (accuracy $\ge 85\%$, AUROC $\ge 0.90$, Macro F1 $\ge 0.85$) despite severe statistical data heterogeneity (Non-IID distributions) and medical class imbalance.
+    \item The patient-level data set $\mathcal{D}_k$ is not disclosed beyond the perimeter of institution $\mathcal{C}_k$.
+    \item The $(\epsilon, \delta)$-Differential Privacy property holds for the updates sent by $\mathcal{C}_k$ to the central aggregator.
+    \item The global server receives only the aggregate value $\sum_{k=1}^K \frac{n_k}{N} w^k$ without knowing any of the individual local model vectors $w^k$ (due to Secure Aggregation).
+    \item The global model possesses excellent diagnostic performance (accuracy $\ge 85\%$, AUROC $\ge 0.90$, Macro F1 $\ge 0.85$) even under extreme statistical heterogeneity and class imbalance of medical data (Non-IID distributions).
 \end{enumerate}
 
 \section{Objectives and Scope of the Project}
-The primary objectives of this M.Tech research project are:
+The main goals for this M.Tech research project are:
 \begin{itemize}
-    \item \textbf{Architecture Design:} Design an end-to-end Privacy-Preserving Federated Learning (PPFL) architecture tailored for healthcare consortia.
-    \item \textbf{Statistical Heterogeneity Modeling:} Implement Dirichlet Non-IID data partitioning ($\text{Dir}(\alpha)$) to model realistic hospital demographic divergence and specialized departmental caseloads.
-    \item \textbf{Differential Privacy Engine:} Integrate Differentially Private Stochastic Gradient Descent (DP-SGD) with per-sample gradient clipping ($C$) and Gaussian perturbation ($\sigma$), tracking cumulative privacy loss via the Rényi Differential Privacy (RDP) moments accountant.
-    \item \textbf{Cryptographic Secure Aggregation:} Formulate and implement a pairwise zero-sum random secret masking protocol that resolves the weighted federated averaging cancellation anomaly.
-    \item \textbf{Diagnostic Efficacy:} Overcome the clinical class imbalance inherent in medical radiography (3:1 Pneumonia-to-Normal ratio) via inverse-frequency class-weighted loss and clinical data augmentations.
-    \item \textbf{Interactive Analytics Interface:} Develop an interactive Streamlit analytics platform allowing clinicians and researchers to visualize client distributions, round convergence, and live diagnostic inference.
+    \item \textbf{Architecture Design:} Design an end-to-end PPFL architecture designed specifically for healthcare consortiums.
+    \item \textbf{Heterogeneous Statistic Data Partitioning:} Implement $\text{Dir}(\alpha)$ data distribution to represent realistic demographic differences between hospitals and specific departments' workload.
+    \item \textbf{Privacy Preserving Mechanism:} Apply DP-SGD with per sample clipping $C$ and Gaussian noise addition $\sigma$, measuring the total privacy cost using Rényi Differential Privacy (RDP) moments accounting mechanism.
+    \item \textbf{Cryptography for Secure Aggregation:} Develop and implement a pairwise zero sum random masking algorithm to fix the problem of weighted federated averaging cancellations.
+    \item \textbf{Efficacy of Diagnosis:} Address the imbalance in the medical class of imaging (3:1 Pneumonia to Normal ratio) using inverse frequency-based class weight loss and medical data augmentation.
+    \item \textbf{Analytics Interface:} Create an interactive Streamlit interface that helps clinicians and researchers visualize client distribution and convergence, as well as infer diagnoses.
 \end{itemize}
 
 \section{Contributions of the Work}
 The key contributions of this dissertation include:
 \begin{enumerate}
-    \item \textbf{Resolution of the Weighted SecAgg Cancellation Anomaly:} We identified a mathematical defect in conventional federated masking where sample-weighted averaging breaks mask zero-sum cancellation, injecting catastrophic noise into model weights. We derive and validate an exact pre-weighted masking formulation that eliminates parameter corruption.
-    \item \textbf{DP-Compatible Medical CNN Architecture:} We engineer \textbf{PneumoniaCNN}, a 3-block convolutional neural network utilizing Group Normalization ($\texttt{GroupNorm}$) instead of Batch Normalization, enabling mathematically compliant per-sample gradient computation within PyTorch Opacus.
-    \item \textbf{Extensive Empirical Validation:} On the benchmark MedMNIST PneumoniaMNIST cohort ($4{,}708$ training images across 5 hospital nodes), our system achieves an accuracy of \textbf{86.86\%}, an AUROC of \textbf{0.9273}, and an F1-score of \textbf{0.8603}, successfully proving that decentralized privacy mechanisms need not sacrifice diagnostic performance.
-    \item \textbf{Comprehensive Open-Source Codebase:} Deliver a modular, production-ready implementation encompassing data partitioning, client simulation, cryptographic masking, and a visual diagnostic dashboard.
+    \item \textbf{Weighted SecAgg Cancellation Paradox Resolution:} We pin point a mathematical flaw in the existing approach to federated masking in which the sample-weighting mechanism spoils mask zero-sum cancellation and introduces devastating noise to the model parameters. We formulate and prove our exact weighted masking solution.
+    \item \textbf{DP-Compatible Medical CNN Architecture:} We design \textbf{PneumoniaCNN}, which is a 3-layer convolutional neural network using \textit{Group Normalization} ($\texttt{GroupNorm}$) in place of \textit{Batch Normalization} to facilitate gradient computation in a manner that is mathematically consistent with DP in PyTorch Opacus.
+    \item \textbf{Extensive Empirical Validation:} On the MedMNIST PneumoniaMNIST dataset ($4{,}708$ images for training at 5 hospitals), we obtain an accuracy of \textbf{86.86\%}, AUROC of \textbf{0.9273}, and F1-Score of \textbf{0.8603}, demonstrating that decentralized privacy-preserving schemes do not necessarily compromise on diagnostic capability.
+    \item \textbf{Comprehensive Open-Source Codebase:} Provide an implementation of a system that incorporates data partitioning, client simulation, encryption, and a visualization diagnostic dashboard.
 \end{enumerate}
 
 \section{Brief Outline of the Report}
-The remainder of this report is structured as follows: Chapter~\ref{chap:lit_review} conducts an exhaustive literature review of federated optimization, differential privacy, cryptographic multi-party computation, and healthcare AI. Chapter~\ref{chap:methodology} presents the comprehensive system methodology, mathematical derivations, neural architecture, and algorithmic pseudocode. Chapter~\ref{chap:results} details the empirical experimental results, ablation studies, privacy-utility trade-offs, and error analysis. Chapter~\ref{chap:conclusion} concludes the report and discusses promising future extensions. Finally, the Appendices provide formal mathematical proofs, implementation source code, and full training logs.
+The rest of this report is organized as follows: Chapter~\ref{chap:lit_review} performs a thorough literature review on federated learning, differential privacy, cryptographic multi-party computation, and healthcare AI. Chapter~\ref{chap:methodology} provides the system methodology, mathematical derivations, neural network architecture, and pseudocode for the algorithm. Chapter~\ref{chap:results} reports the experimental results, ablation studies, privacy utility tradeoffs, and error analysis. Chapter~\ref{chap:conclusion} concludes the report and proposes future directions. Finally, Appendices provide the mathematical proof, source code, and complete training logs.
 
 % ----------------------------------------------------------------------
 % 5. Literature Review
@@ -251,46 +189,46 @@ The remainder of this report is structured as follows: Chapter~\ref{chap:lit_rev
 \label{chap:lit_review}
 
 \section{Summary of Existing Methods and Techniques}
-Collaborative machine learning across privacy-restricted domains has motivated intensive research over the past decade. This section reviews relevant literature across four pillars: Federated Learning Algorithms, Data Heterogeneity, Differential Privacy in Deep Learning, and Cryptographic Aggregation Protocols.
+Collaborative learning amongst privacy-constrained environments has driven significant research efforts in the last ten years. The following section outlines relevant work within four distinct pillars: Federated Learning Algorithms, Data Heterogeneity, Differential Privacy in Deep Learning, and Cryptographic Aggregation Schemes.
 
 \subsection{Federated Learning Foundations}
-The foundational principles and theoretical taxonomy of distributed federated learning are synthesized by Kairouz et al. (2021) \cite{kairouz2021advances} and Li et al. (2021) \cite{li2021survey}. Federated learning coordinates decentralized client gradient updates through central parameter aggregation. Following early averaging formulations, numerous robust optimization variants have emerged. Karimireddy et al. (2020) \cite{karimireddy2020scaffold} introduced \textbf{SCAFFOLD}, which uses control variates to correct client drift. Reddi et al. (2021) \cite{reddi2021adaptive} introduced adaptive federated optimizers (FedAdam, FedYogi, FedAdagrad), which apply momentum and adaptive learning rates at the server tier. Acar et al. (2021) \cite{acar2021feddyn} proposed \textbf{FedDyn}, aligning local empirical loss surfaces dynamically with global objectives.
+The key principles and theory behind federated learning are provided by Kairouz et al. (2021) \cite{kairouz2021advances} and Li et al. (2021) \cite{li2021survey}. Centralization of parameter updating is done by coordinating client gradient computations using centralized parameter aggregation in federated learning. Along with initial averaging schemes, various robust optimization approaches have been developed subsequently. SCAFFOLD framework was developed by Karimireddy et al. (2020) \cite{karimireddy2020scaffold} using control variates to correct client drift. Reddi et al. (2021) \cite{reddi2021adaptive} developed adaptive federated optimizers (FedAdam, FedYogi, FedAdagrad) for applying momentum and adaptive learning rate on the server-side. Acar et al. (2021) \cite{acar2021feddyn} introduced \textbf{FedDyn} framework to match local empirical loss surface with global objective.
 
 \subsection{Data Heterogeneity and Client Drift}
-In healthcare networks, client datasets violate the Identical and Independently Distributed (IID) assumption due to divergent patient demographics and diagnostic protocols. Li et al. (2020) \cite{li2020fedprox} proposed \textbf{FedProx}, augmenting local objectives with a proximal regularization term $\frac{\mu}{2}\|w - w_t\|^2$ to prevent client parameters from diverging excessively from global consensus. Wang et al. (2020) \cite{wang2020fednova} analyzed objective inconsistency across heterogeneous networks, while Wang et al. (2020) \cite{wang2020fedma} and Tan et al. (2022) \cite{tan2022survey} established Dirichlet distribution $\text{Dir}(\alpha)$ partitioning as the standard benchmark for non-IID client skew.
+However, in healthcare federated learning scenarios, client datasets exhibit non-IID property owing to varied demographics of the patients and varied diagnosis processes. Li et al. (2020) \cite{li2020fedprox} suggested \textbf{FedProx}, which adds proximal regularizer $\frac{\mu}{2}\|w - w_t\|^2$ to the client objectives in order to prevent the clients' model parameters from drifting far away from the global agreement. Wang et al. (2020) \cite{wang2020fednova} studied the objective inconsistency among heterogeneous network clients, whereas Wang et al. (2020) \cite{wang2020fedma} and Tan et al. (2022) \cite{tan2022survey} defined the Dirichlet distribution $\text{Dir}(\alpha)$ partitioning as the benchmark for non-IID client skew.
 
 \subsection{Differential Privacy in Machine Learning}
-The formalization of differential privacy in federated deep learning has expanded rapidly in recent years. Kaissis et al. (2020) \cite{kaissis2020secure} and Wei et al. (2020) \cite{wei2020federated} established rigorous bounds for Differentially Private Stochastic Gradient Descent (DP-SGD) in distributed architectures, utilizing per-sample gradient clipping and calibrated Gaussian perturbation. To tightly bound cumulative privacy loss over successive training epochs, Yousefpour et al. (2021) \cite{yousefpour2021opacus} implemented the Rényi Differential Privacy (RDP) moments accountant within the Opacus framework. Furthermore, Sahu et al. (2021) \cite{sahu2021privacy} surveyed modern privacy threats in medical AI, while Nasr et al. (2021) \cite{nasr2021inference} and Yin et al. (2021) \cite{yin2021see} demonstrated how deep gradient inversion attacks can reconstruct private clinical data unless formal DP-SGD clipping and noise mechanisms are enforced.
+Formal methods have been quickly developed to achieve differential privacy in federated deep learning. In this respect, Kaissis et al. (2020) \cite{kaissis2020secure} and Wei et al. (2020) \cite{wei2020federated} have provided precise bounds for differentially private stochastic gradient descent (DP-SGD) in federated learning systems by applying per-sample gradient clipping and calibrated Gaussian perturbation. In order to achieve tight bounds on cumulative privacy loss in sequential training epochs, Yousefpour et al. (2021) \cite{yousefpour2021opacus} incorporated the Renyi differential privacy (RDP) moments accountant in the Opacus system. Moreover, Sahu et al. (2021) \cite{sahu2021privacy} have reviewed current threats to privacy in medical AI research, whereas Nasr et al. (2021) \cite{nasr2021inference} and Yin et al. (2021) \cite{yin2021see} have shown that deep gradient inversion attacks can be used to recover private clinical data in absence of formal DP-SGD clipping and noise addition techniques.
 
 \subsection{Cryptographic Secure Multi-Party Computation}
-While DP-SGD shields individual training records, unprotected gradient updates remain vulnerable to eavesdropping and inference. Bell et al. (2020) \cite{bell2020secure} formulated high-performance, single-server \textbf{Secure Aggregation (SecAgg)} protocols using bounded communication rounds. So et al. (2021) \cite{so2021turbo} introduced Turbo-Aggregate, utilizing circular network topologies and multi-party secret sharing to break quadratic communication bottlenecks. These cryptographic protocols enable an untrusted coordinator to aggregate local model updates into a global model without exposing any individual hospital's raw gradient parameters.
+Although DP-SGD protects the privacy of training data samples, unprotected gradient updates are prone to being spied upon and inferred. The cryptographic technique called Secure Aggregation (SecAgg) was developed by Bell et al. (2020) \cite{bell2020secure}, which includes single server protocols with efficient performance via limited communication rounds. Turbo-Aggregate has been devised by So et al. (2021) \cite{so2021turbo}, which relies on a circular topology structure in the network and multi-party secret sharing for removing quadratic communication limits.
 
 \subsection{Federated Learning in Healthcare}
-The clinical imperative for federated learning has been documented extensively. Rieke et al. (2020) \cite{rieke2020future} and Kaissis et al. (2020) \cite{kaissis2020secure} established the clinical and regulatory roadmaps for privacy-preserving AI in digital healthcare. Sheller et al. (2020) \cite{sheller2020federated} and Pati et al. (2022) \cite{pati2022fets} demonstrated successful real-world multi-institutional federated learning for brain tumor segmentation across diverse hospital consortia. Dayan et al. (2021) \cite{dayan2021exam} orchestrated the multi-institutional EXAM initiative for COVID-19 outcome prediction, while Roth et al. (2020) \cite{roth2020breast} proved feasibility for breast density classification. Li et al. (2020) \cite{li2020multi} validated privacy-preserving federated neuroimaging across disparate clinical sites on ABIDE fMRI cohorts. Wu et al. (2020) \cite{wu2020federated}, Chen et al. (2021) \cite{chen2021fedhealth}, and Zheng et al. (2023) \cite{zheng2023federated} reviewed clinical architectures and verified the viability of decentralized training. Warnat-Herresthal et al. (2021) \cite{warnat2021swarm} demonstrated swarm learning for confidential medical AI, and Zhang et al. (2023) \cite{zhang2023personalized} surveyed personalized clinical federated frameworks. Benchmarking these methodologies, Yang et al. (2023) \cite{yang2023medmnist} released \textbf{MedMNIST v2}, establishing standardized lightweight clinical benchmarks including PneumoniaMNIST for reproducible pediatric radiograph classification. Furthermore, modern federated orchestration frameworks such as Flower (Beutel et al., 2020) \cite{beutel2020flower} and FedML (He et al., 2020) \cite{he2020fedml} have established foundational engineering benchmarks for simulating decentralized, privacy-preserving training protocols across diverse computing topologies.
+The clinical need for federated learning has been well documented. Rieke et al. (2020) \cite{rieke2020future} and Kaissis et al. (2020) \cite{kaissis2020secure} provided the roadmap for the clinical and regulatory deployment of privacy-preserving AI in digital healthcare. Sheller et al. (2020) \cite{sheller2020federated} and Pati et al. (2022) \cite{pati2022fets} have achieved successful federated learning for brain tumor segmentation using real-world data from different hospital consortia. Dayan et al. (2021) \cite{dayan2021exam} organized the multi-institutional EXAM project for predicting the outcomes of COVID-19 and Roth et al. (2020) \cite{roth2020breast} showed the feasibility for classifying breast density. Li et al. (2020) \cite{li2020multi} have tested the clinical application of privacy-preserving federated learning in neuroimaging using ABIDE fMRI dataset. Wu et al. (2020) \cite{wu2020federated}, Chen et al. (2021) \cite{chen2021fedhealth} and Zheng et al. (2023) \cite{zheng2023federated} reviewed clinical architectures and confirmed the feasibility of decentralized training. Swarm learning techniques for confidential healthcare-based AI were showcased by Warnat-Herresthal et al. (2021) \cite{warnat2021swarm}. Personalized federated clinical systems were reviewed by Zhang et al. (2023) \cite{zhang2023personalized}. Assessing these techniques, Yang et al. (2023) \cite{yang2023medmnist} presented the release of MedMNIST v2, which provides standard benchmarks for lightweight clinical scenarios, such as PneumoniaMNIST, for reproducible pediatric radiographs' classification. Moreover, recent federated learning orchestration platforms like Flower by Beutel et al. (2020) \cite{beutel2020flower} and FedML by He et al. (2020) \cite{he2020fedml} provide standard engineering benchmarks for the simulation of decentralized training methods.
 
 \section{Identification of Research Gaps}
-Despite substantial progress, existing literature reveals four critical research and engineering gaps:
+While considerable advancement has been made, the existing body of literature identifies four significant gaps:
 \begin{enumerate}
-    \item \textbf{Masking Incompatibility with Sample-Weighted Aggregation:} Existing literature frequently models Secure Aggregation assuming unweighted parameter averaging. In realistic healthcare federations, hospital population sizes $n_k$ vary widely. Applying pairwise zero-sum masks naively to unweighted weights breaks mask cancellation when the server applies sample fractions $\frac{n_k}{N}$, injecting devastating noise into global parameters.
-    \item \textbf{Normalization Layer Conflicts with DP-SGD:} Standard vision architectures (e.g., ResNet, DenseNet) rely heavily on Batch Normalization. However, Batch Normalization violates sample independence by coupling statistics across the mini-batch, causing Opacus and standard DP-SGD engines to fail or produce distorted gradient estimates.
-    \item \textbf{Severe Class Imbalance under Non-IID Skew:} While non-IID partitioning has been widely studied on balanced datasets (such as CIFAR-10 and MNIST), medical cohorts intrinsically exhibit extreme class imbalance (e.g., 3:1 Pneumonia prevalence). Under low Dirichlet concentration ($\alpha = 0.1$), client nodes frequently receive near-zero samples of minority classes, resulting in model collapse or degenerate trivial predictors.
-    \item \textbf{Absence of End-to-End Integrated Frameworks:} Most studies analyze either Differential Privacy in isolation or Secure Aggregation in isolation, failing to address the compound system degradation when both protocols operate concurrently alongside Non-IID Dirichlet skew.
+    \item \textbf{Incompatible Masking with Weighted Summation on Samples:} The literature on Secure Aggregation tends to consider the case where weights are unweighted average parameters. In practical healthcare networks, population sizes $n_k$ differ significantly from one another. Naive masking for unweighted weights will make the cancellation of masks ineffective when the server uses the fraction $\frac{n_k}{N}$ of samples.
+    \item \textbf{Normalization Layer Conflicts with DP-SGD:} Modern visual model designs (e.g., ResNet, DenseNet) use Batch Normalization extensively. Yet, Batch Normalization fails to ensure the sample independence assumption by making the statistics dependent over the mini-batch.
+    \item \textbf{Severe Class Imbalance under Non-IID Skew:} Despite non-IID sampling being extensively studied with balanced data (e.g., CIFAR-10, MNIST), in medical groups, class imbalance is inherent and very severe (e.g., 3:1 Pneumonia ratio). In the case of small Dirichlet concentration parameter ($\alpha=0.1$), there is a high probability that minority classes get no samples at all.
+    \item \textbf{Absence of End-to-End Integrated Frameworks:} The vast majority of research either considers Differential Privacy separately or considers Secure Aggregation separately, without examining the impact of the combined system deterioration resulting from the simultaneous operation of both protocols.
 \end{enumerate}
 
 \section{Justification for Proposed Approach}
-Our proposed framework addresses each identified research gap systematically:
+The proposed framework attempts to bridge all research gaps identified:
 \begin{itemize}
-    \item We derive a mathematically rigorous \textbf{pre-weighted Secure Aggregation} formulation that preserves zero-sum cancellation regardless of client dataset size disparities.
-    \item We replace Batch Normalization with \textbf{Group Normalization} across all convolutional stages, preserving channel expressiveness while strictly respecting sample independence for DP-SGD.
-    \item We incorporate \textbf{inverse-frequency class weighting} and \textbf{clinical data augmentations} into the local loss function, preventing minority class erasure and ensuring balanced sensitivity and specificity.
+    \item We introduce a pre-weighted formulation of \textbf{Secure Aggregation} that guarantees zero-sum cancellation properties despite any differences in sizes between client datasets.
+    \item We substitute Batch Normalization with \textbf{Group Normalization} during all convolutional steps, maintaining channel expressivity and enforcing sample independence for DP-SGD.
+    \item We use \textbf{class inverse-frequency weighting} and \textbf{augmentations specific to clinical data} in the local loss, thus avoiding minority class underrepresentation and balancing sensitivity and specificity.
 \end{itemize}
 
 \section{Comparative Study with Existing Literature}
-Table~\ref{tab:lit_comparison} contrasts our proposed system against prominent related studies across key architectural and clinical criteria.
+The comparative performance of the suggested architecture relative to relevant previous works is presented in Table~\ref{tab:lit_comparison}.
 
 \begin{table}[htbp]
 \centering
-\caption{Comparative Analysis with Existing Federated Healthcare Studies}
+\caption{Comparative Study With Current Federated Health Care Literature}
 \label{tab:lit_comparison}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lcccccc}
@@ -316,7 +254,7 @@ Kaissis et al. \cite{kaissis2020secure} & Healthcare & Roadmap & Yes & Yes & Con
 \label{chap:methodology}
 
 \section{System Workflow and Block Diagram}
-The proposed PPFL framework orchestrates a multi-client distributed training lifecycle across $K$ hospital nodes coordinated by an aggregation server. Figure~\ref{fig:workflow_block} depicts the structural block diagram.
+The PPFL model framework manages the distributed training cycle with multiple clients through $K$ hospitals, which are controlled by an aggregation server. The structural block diagram is shown in Figure~\ref{fig:workflow_block}.
 
 \begin{figure}[htbp]
 \centering
@@ -333,7 +271,7 @@ The proposed PPFL framework orchestrates a multi-client distributed training lif
     % Hospital Nodes
     \node (hosp1) [client, below left=2.2cm and -1.0cm of server] {Hospital Node 1\\ \footnotesize Private EHR/X-Rays\\ \footnotesize DP-SGD ($C, \sigma$)\\ \footnotesize Weighted Masking};
     \node (hosp2) [client, below=2.2cm of server] {Hospital Node 2\\ \footnotesize Private EHR/X-Rays\\ \footnotesize DP-SGD ($C, \sigma$)\\ \footnotesize Weighted Masking};
-    \node (hospK) [client, below right=2.2cm and -1.0cm of server] {Hospital Node $K$\\ \footnotesize Private EHR/X-Rays\\ \footnotesize DP-SGD ($C, \sigma$)\\ \footnotesize Weighted Masking};
+    \node (hospK) [client, below right=2.2cm and -1.5cm of server] {Hospital Node $K$\\ \footnotesize Private EHR/X-Rays\\ \footnotesize DP-SGD ($C, \sigma$)\\ \footnotesize Weighted Masking};
     
     % Coordinate paths
     \draw [arrow] (server.south -| hosp1.north) -- node[left, font=\scriptsize] {Broadcast $W_t$} (hosp1.north);
@@ -344,32 +282,31 @@ The proposed PPFL framework orchestrates a multi-client distributed training lif
     \draw [arrow] (hosp2.north) ++(0.4,0) -- node[right, font=\scriptsize] {Masked $Y_2$} ++(0, 1.4);
     \draw [arrow] (hospK.north) ++(-0.6,0) -- node[left, font=\scriptsize] {Masked $Y_K$} ++(0, 1.4);
 \end{tikzpicture}
-\caption{System Workflow Architecture of the Privacy-Preserving Federated Learning Framework.}
+\caption{Architecture for System Workflow of the Privacy-Preserving Federated Learning System.}
 \label{fig:workflow_block}
 \end{figure}
 
 \section{Dataset Description and Characteristics}
 \subsection{Data Source}
-The framework is benchmarked on \textbf{PneumoniaMNIST}, a standardized clinical imaging benchmark from the MedMNIST v2 suite (Yang et al., 2023 \cite{yang2023medmnist}). PneumoniaMNIST comprises 5,856 pediatric chest radiographs (1,583 normal, 4,273 pneumonia), preprocessed to $28 \times 28$ grayscale format, capturing clinical radiologic variations across hospital nodes.
+The benchmarking of the proposed framework was done using \textbf{PneumoniaMNIST}, which is a clinical imaging benchmark standardized from the MedMNIST v2 dataset (Yang et al., 2023 \cite{yang2023medmnist}). The PneumoniaMNIST dataset consists of 5,856 images (1,583 normal chest x-rays and 4,273 pneumonia) and were preprocessed to a size of $28 \times 28$.
 
 \subsection{Preprocessing Pipeline}
 \begin{enumerate}
-    \item \textbf{Dimensionality Standardization:} Radiographs are center-cropped and standardized to $28 \times 28$ pixels in single-channel grayscale, conserving distributed communication bandwidth.
-    \item \textbf{Pixel Normalization:} Pixel intensities $p \in [0, 255]$ are scaled to tensors and normalized via mean-variance centering: $x_{\text{norm}} = (x - 0.5) / 0.5 \in [-1.0, 1.0]$.
-    \item \textbf{Clinical Augmentation (Training Only):} To simulate real-world radiographic variability and prevent localized overfitting on minority classes, training batches undergo:
+    \item \textbf{Standardization of Image Dimensionality:} Radiographs are center-cropped and standard-sized to $28 \times 28$ pixels, maintaining single-channel grayscale representation, for efficient distributed communication channel utilization.
+    \item \textbf{Normalizing Pixel Intensity:} Pixel intensity values $p \in [0, 255]$ are normalized using tensors through mean variance centering: $x_{\text{norm}} = (x - 0.5) / 0.5 \in [-1.0, 1.0]$.
+    \item \textbf{Clinical Data Augmentation (Training Only):} To emulate the natural variation in real-world radiography data and avoid localized overfitting in minority classes, training data batches go through the following steps:
     \begin{itemize}
-        \item Random Horizontal Reflection ($p = 0.5$), exploiting bilateral lung symmetry.
-        \item Random Radiographic Rotation ($\theta \in [-10^\circ, +10^\circ]$), replicating pediatric patient posture variations.
+        \item Random Horizontal Reflection with a probability of $0.5$, making use of bilateral lung symmetries.
+        \item Random Rotation of radiographs by an angle $\theta \in [-10^\circ, +10^\circ]$, emulating pediatric patients’ postures.
     \end{itemize}
-    Validation and test sets remain strictly deterministic without augmentations.
 \end{enumerate}
 
 \subsection{Dataset Partitioning Statistics}
-Table~\ref{tab:dataset_stats} summarizes the sample distribution across splits.
+Table~\ref{tab:dataset_stats} shows the distribution of samples among splits.
 
 \begin{table}[htbp]
 \centering
-\caption{PneumoniaMNIST Dataset Distribution Characteristics}
+\caption{Pneumonia MNIST Dataset Properties}
 \label{tab:dataset_stats}
 \begin{tabular}{lcccc}
 \toprule
@@ -383,24 +320,24 @@ Held-Out Test Set ($\mathcal{D}_{\text{test}}$) & $234$     & $390$     & $624$ 
 \end{table}
 
 \section{Dirichlet Non-IID Statistical Partitioning}
-To simulate realistic clinical heterogeneity across $K=5$ hospital nodes, we employ Dirichlet distribution partitioning over class labels. Let $N_c$ denote the total samples of class $c \in \{0, 1\}$. For each class, a vector of proportions $q_c = (q_{c,1}, q_{c,2}, \dots, q_{c,K}) \sim \text{Dir}(\alpha)$ is sampled from a symmetric Dirichlet distribution:
+In order to induce clinical heterogeneity among $K=5$ hospitals, Dirichlet partitioning is used for the class labels. Let $N_c$ be the total number of samples in the class $c \in \{0,1\}$. The proportion vector $q_c = (q_{c,1}, q_{c,2}, \dots, q_{c,K}) \sim \text{Dir}(\alpha)$ for each class is sampled from the Dirichlet distribution:
 \begin{equation}
     f(q_{c,1}, \dots, q_{c,K}; \alpha) = \frac{\Gamma(K\alpha)}{\Gamma(\alpha)^K} \prod_{k=1}^K q_{c,k}^{\alpha - 1}
 \end{equation}
-The concentration parameter $\alpha$ controls institutional divergence:
+The concentration parameter $\alpha$ determines institutional heterogeneity in the following way:
 \begin{itemize}
-    \item When $\alpha \to \infty$, $q_{c,k} \to 1/K$, yielding an identical and independent (IID) partition.
-    \item When $\alpha = 0.5$, moderate natural clinical divergence occurs.
-    \item When $\alpha = 0.1$, extreme demographic specialization arises.
+    \item As $\alpha \to \infty$, $q_{c,k} \to 1/K$, and this results in IID clustering.
+    \item If $\alpha = 0.5$, there is some natural clinical heterogeneity.
+    \item If $\alpha = 0.1$, demographic heterogeneity is extreme.
 \end{itemize}
-To guarantee operational viability under extreme skew ($\alpha = 0.1$), we enforce a minimum threshold constraint: $n_k \ge 15$ samples $\forall k \in \{1, \dots, K\}$.
+In order to ensure operational viability for the extremely skewed case ($\alpha = 0.1$), the following constraint is enforced: $n_k \ge 15$ $\forall k \in \{1, \dots, K\}$.
 
 \section{Neural Network Architecture: PneumoniaCNN}
-To maintain rigorous compliance with PyTorch Opacus and avoid the sample-coupling failure modes of Batch Normalization, we engineered \textbf{PneumoniaCNN}. Its structural topology is detailed in Table~\ref{tab:model_architecture}.
+To ensure strict adherence to PyTorch Opacus, as well as the sample coupling problem of batch normalization, we came up with \textbf{PneumoniaCNN} architecture, which is presented in Table~\ref{tab:model_architecture}.
 
 \begin{table}[htbp]
 \centering
-\caption{PneumoniaCNN Detailed Layer Architecture}
+\caption{CNN Pneumonia Model Structure}
 \label{tab:model_architecture}
 \begin{tabular}{llcc}
 \toprule
@@ -424,62 +361,62 @@ Classifier Output & Linear(128 $\to$ 2) (Logits) & $2$ & $258$ \\
 \end{table}
 
 \section{Differential Privacy Engine Formulation (DP-SGD)}
-At each local hospital node, the training process executes under differential privacy using PyTorch Opacus \cite{yousefpour2021opacus}. For each mini-batch $\mathcal{B} \subseteq \mathcal{D}_k$:
+For each node in the local hospitals, the training is performed in differential privacy manner using PyTorch Opacus \cite{yousefpour2021opacus}. For each mini-batch $\mathcal{B} \subseteq \mathcal{D}_k$:
 \begin{enumerate}
-    \item \textbf{Per-Sample Gradient Computation:} Compute the per-sample loss $\ell(w; x_i, y_i)$ using class-weighted cross-entropy:
+    \item \textbf{Per-Sample Gradient Computation:} The loss function $\ell(w; x_i, y_i)$ should be calculated as follows:
     \begin{equation}
         \mathcal{L}(w; x_i, y_i) = - w_{y_i} \log \left( \frac{\exp(z_{y_i})}{\sum_{c=0}^1 \exp(z_c)} \right)
     \end{equation}
-    where $w_0 = 1.94$ (Normal) and $w_1 = 0.67$ (Pneumonia). Per-sample gradients $g_i = \nabla_w \mathcal{L}(w; x_i, y_i)$ are evaluated independently.
-    \item \textbf{Norm Clipping:} Enforce a maximum $L_2$-norm threshold $C = 1.5$:
+    where $w_0 = 1.94$ (Normal) and $w_1 = 0.67$ (Pneumonia). The per-sample gradients are computed separately as follows: $g_i = \nabla_w \mathcal{L}(w; x_i, y_i)$.
+    \item \textbf{Norm Clipping:}Clip the $L_2$-norm to the maximum $C = 1.5$:
     \begin{equation}
         \bar{g}_i = g_i / \max\left(1, \frac{\|g_i\|_2}{C}\right)
     \end{equation}
-    \item \textbf{Gaussian Perturbation and Step:} Perturb with Gaussian noise scaled by multiplier $\sigma = 0.80$:
+    \item \textbf{Gaussian Perturbation and Step:} Perturbation using Gaussian noise with scaling factor $\sigma = 0.80$:
     \begin{equation}
         w \gets w - \eta \cdot \frac{1}{|\mathcal{B}|} \left( \sum_{i \in \mathcal{B}} \bar{g}_i + \mathcal{N}(0, \sigma^2 C^2 \mathbf{I}) \right)
     \end{equation}
-    \item \textbf{Privacy Accounting via Rényi DP:} The cumulative privacy spend $(\epsilon, \delta)$ is tracked across all rounds via the Rényi Differential Privacy moments accountant implemented in Opacus (Yousefpour et al., 2021 \cite{yousefpour2021opacus}; Wei et al., 2020 \cite{wei2020federated}), guaranteeing $\delta = 10^{-5}$.
+    \item \textbf{Privacy Accounting using Rényi DP:} The cumulative privacy budget $(\epsilon, \delta)$ spent over all iterations is monitored using the moments accountant for Rényi Differential Privacy from Opacus (Yousefpour et al., 2021 \cite{yousefpour2021opacus}, Wei et al., 2020 \cite{wei2020federated}) that provides $\delta = 10^{-5}$.
 \end{enumerate}
 
 \section{Exact Weighted Secure Aggregation Protocol}
 \subsection{Mathematical Formulation}
-To eliminate privacy leakage to the central server, the system employs pairwise additive secret sharing.
-\begin{definition}[Pairwise Zero-Sum Random Masking]
-Let $K$ denote the number of participating clients. For every pair of clients $(i, j)$ with $1 \le i < j \le K$, the pair shares a pseudo-random seed $s_{i,j}$ generated via Diffie-Hellman key exchange. Each client generates pseudo-random mask matrices matching the neural network weight tensor shapes:
+In order to prevent privacy leakage to the central server, the system uses additive secret sharing.
+\begin{definition}[Zero Sum Pairs Random Masking] 
+Let $K$ be the number of participants. Each pair of users $(i,j)$ where $1\leq i<j\leq K$ share a pseudo random seed $s_{i,j}$, which is produced using the Diffie-Hellman key exchange protocol. Each participant creates pseudo-random mask matrices of the same dimensions as that of neural network weight tensors:
 \begin{equation}
     M_{i,j} \sim \mathcal{N}(0, 0.5 \cdot \mathbf{I})
 \end{equation}
-The aggregated mask for client $k$ is defined as:
+The aggregate mask of client $k$ is given as:
 \begin{equation}
     \text{Mask}_k = \sum_{j > k} M_{k,j} - \sum_{i < k} M_{i,k}
 \end{equation}
 \end{definition}
 
-\begin{theorem}[Zero-Sum Cancellation under Pre-Weighted Masking]
-Let $w_k \in \mathbb{R}^d$ be the local weights trained by hospital $k$, with dataset size $n_k$, and $N = \sum_{k=1}^K n_k$. If client $k$ transmits the pre-weighted masked update:
+\begin{theorem}[Zero-Sum Cancellation with Pre-Weighted Masking]
+Assume that $w_k \in \mathbb{R}^d$ is the set of local weights learned by the $k$-th hospital, having $n_k$ samples, while $N = \sum_{k=1}^K n_k$. Then, client $k$ sends the pre-weighted masked update:
 \begin{equation}
     Y_k = \left( \frac{n_k}{N} \right) w_k + \text{Mask}_k
 \end{equation}
-Then the server's linear summation over all received client vectors yields the exact weighted FedAvg global model without parameter corruption:
+And then the linear sum of the vectors collected from clients by the server is performed to get the uncorrupted FedAvg global model:
 \begin{equation}
     \sum_{k=1}^K Y_k \equiv \sum_{k=1}^K \frac{n_k}{N} w_k
 \end{equation}
 \end{theorem}
 
 \begin{proof}
-Expanding the central server's summation:
+Further developing the central server’s summation:
 \begin{equation}
     \sum_{k=1}^K Y_k = \sum_{k=1}^K \left[ \left(\frac{n_k}{N}\right) w_k + \text{Mask}_k \right] = \sum_{k=1}^K \frac{n_k}{N} w_k + \sum_{k=1}^K \text{Mask}_k
 \end{equation}
-Expanding the mask summation:
+Mask summation expanded:
 \begin{equation}
     \sum_{k=1}^K \text{Mask}_k = \sum_{k=1}^K \left( \sum_{j > k} M_{k,j} - \sum_{i < k} M_{i,k} \right)
 \end{equation}
-For any pair $(u, v)$ with $u < v$, the term $M_{u,v}$ appears exactly twice in the global summation:
+In case of a pair $(u, v)$ such that $u < v$, there is a total of two appearances for the term $M_{u,v}$ in the total summation expression:
 \begin{itemize}
-    \item Once in client $u$'s positive sum with $+M_{u,v}$ (since $v > u$).
-    \item Once in client $v$'s negative sum with $-M_{u,v}$ (since $u < v$).
+    \item One in client $u$'s summation expression using $+M_{u,v}$ because $v > u$.
+    \item One in client $v$'s summation expression using $-M_{u,v}$ because $u < v$.
 \end{itemize}
 Therefore:
 \begin{equation}
@@ -489,14 +426,14 @@ Substituting back:
 \begin{equation}
     \sum_{k=1}^K Y_k = \sum_{k=1}^K \frac{n_k}{N} w_k + \mathbf{0} = W_{\text{global}}
 \end{equation}
-Hence, the masks cancel identically to zero. The server recovers the exact global FedAvg model while observing only uniformly distributed pseudo-random tensors from each individual client.
+Therefore, the masks cancel out exactly to zero. The server obtains the exact global FedAvg model by seeing only uniform random tensors from each client.
 \end{proof}
 
 \section{Algorithmic Pseudocode}
-The end-to-end framework execution is detailed in Algorithm~\ref{alg:main_training}.
+The end-to-end framework is described by Algorithm~\ref{alg:main_training}.
 
 \begin{algorithm}[htbp]
-\caption{Privacy-Preserving Federated Learning for Healthcare (PPFL)}
+\caption{Privacy-preserving Federated Learning in Healthcare (PPFL)}
 \label{alg:main_training}
 \begin{algorithmic}[1]
 \Require Hospital nodes $K$, rounds $T$, local epochs $E$, batch size $B$, learning rate $\eta_0$, decay $\gamma=0.97$, DP threshold $C$, noise $\sigma$, DP flag.
@@ -540,11 +477,11 @@ The end-to-end framework execution is detailed in Algorithm~\ref{alg:main_traini
 \label{chap:results}
 
 \section{Quantitative Results and Round Progression}
-The empirical progression of the global diagnostic model over communication rounds evaluated on the held-out central test dataset ($624$ patients) is presented in Table~\ref{tab:results_progression}.
+The evolution of the global diagnosis model empirically through rounds of communication on the test set ($624$ patients) is shown in Table~\ref{tab:results_progression}.
 
 \begin{table}[htbp]
 \centering
-\caption{Global Diagnostic Model Performance Across Federation Rounds (Non-DP Setting)}
+\caption{Performance of Global Diagnostic Models Over Federations (Non-DP Environment)}
 \label{tab:results_progression}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{ccccccc}
@@ -563,32 +500,32 @@ Round 3        & $85.90\%$ & $0.9285$ & $0.8462$ & $0.8562$ & $0.8393$ & $0.3715
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.95\textwidth]{experiments/results/fl_history_fedavg_nodp.png}
-    \caption{Empirical Convergence Curves for Global Test Accuracy, AUROC, and Test Loss over Communication Rounds.}
+    \caption{Convergence Curves Empirically Obtained for Global Accuracy, AUROC, and Loss of Test over Communication Rounds.}
     \label{fig:convergence_curves}
 \end{figure}
 
-As shown in Table~\ref{tab:results_progression} and Figure~\ref{fig:convergence_curves}:
+As evident from Table~\ref{tab:results_progression} and Figure~\ref{fig:convergence_curves}
 \begin{itemize}
-    \item \textbf{Rapid Convergence:} The global model improves from an initial random baseline of $37.66\%$ accuracy to \textbf{86.86\%} in just two federated aggregation rounds.
-    \item \textbf{High Discrimination:} Test AUROC exceeds \textbf{0.927}, confirming high diagnostic rank-order separation between normal lung tissue and viral/bacterial pneumonia consolidations.
-    \item \textbf{Balanced Clinical Utility:} Both precision ($0.8591$) and recall ($0.8615$) are equally balanced, preventing clinical hazards associated with either high false-positive rates (unnecessary antibiotic treatments) or high false-negative rates (missed pneumonia infections).
+    \item \textbf{Quick Convergence:} The global model achieves an accuracy of \textbf{86.86\%} in only two federated learning iterations from an initial accuracy of $37.66\%$.
+    \item \textbf{High Discriminative Ability:} The test AUROC is above \textbf{0.927}, which proves that there is high discriminability between normal lung tissue and viral/bacterial pneumonia consolidation.
+    \item \textbf{Clinical Utility Equilibrium:} The precision value of $0.8591$ and recall value of $0.8615$ are perfectly balanced, eliminating any clinical risks associated with both false positives and false negatives.
 \end{itemize}
 
 \section{Comparison with Baseline Methods}
-To contextualize the framework's performance, Table~\ref{tab:baseline_comparison} presents an extensive ablation comparison across distinct system configurations.
+To evaluate the framework’s performance, Table~\ref{tab:baseline_comparison} shows an ablation study that compares the results of different system setups.
 
 \begin{table}[htbp]
 \centering
-\caption{Comparative Performance of Framework Configurations}
+\caption{Performance of Framework Configurations Compared}
 \label{tab:baseline_comparison}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{lccccc}
 \toprule
 \textbf{Framework Configuration} & \textbf{Accuracy} & \textbf{AUROC} & \textbf{Macro F1} & \textbf{Privacy ($\epsilon, \delta$)} & \textbf{SecAgg} \\
 \midrule
-1. Baseline with Mask Anomaly      & $55.45\%$ & $0.6313$ & $0.5488$ & $\infty$ (No DP) & Corrupted \\
-2. Corrected SecAgg Masking        & $81.25\%$ & $0.8841$ & $0.7912$ & $\infty$ (No DP) & Verified \\
-3. + GroupNorm CNN \& Augmentations & \textbf{86.86\%} & \textbf{0.9273} & \textbf{0.8603} & $\infty$ (No DP) & Verified \\
+1. Anomaly Detection with Mask      & $55.45\%$ & $0.6313$ & $0.5488$ & $\infty$ (No DP) & Corrupted \\
+2. SecAgg with Mask Correction        & $81.25\%$ & $0.8841$ & $0.7912$ & $\infty$ (No DP) & Verified \\
+3. + GroupNorm CNN + Data Augmentation & \textbf{86.86\%} & \textbf{0.9273} & \textbf{0.8603} & $\infty$ (No DP) & Verified \\
 4. + DP-SGD ($\sigma=0.8, C=1.5$) & $70.67\%$ & $0.7306$ & $0.6964$ & $\epsilon \le 5.07, \delta=10^{-5}$ & Verified \\
 \bottomrule
 \end{tabular}%
@@ -596,36 +533,36 @@ To contextualize the framework's performance, Table~\ref{tab:baseline_comparison
 \end{table}
 
 \section{Analysis of the Privacy-Utility Trade-Off}
-Figure~\ref{fig:dp_curves} displays the training metrics under active Differential Privacy ($\sigma = 0.8, C = 1.5$). 
+Figure~\ref{fig:dp_curves} shows the performance of the training with Differential Privacy ($\sigma=0.8$, $C=1.5$). 
 
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.95\textwidth]{experiments/results/fl_history_fedavg_dp.png}
-    \caption{Differentially Private Federated Training Metrics: Test Accuracy, AUROC, and Cumulative Privacy Budget ($\epsilon$) Spend.}
+    \caption{Differentially Private Federated Training Metrics: Test Accuracy, AUROC, and Total Privacy Spend ($\epsilon$).}
     \label{fig:dp_curves}
 \end{figure}
 
-The empirical findings reveal:
+Empirical evidence shows that:
 \begin{itemize}
-    \item \textbf{Utility Cost of DP-SGD:} Injecting calibrated Gaussian noise into clipped gradients results in an accuracy drop of approximately $16.19\%$ (from $86.86\%$ to $70.67\%$). This conforms directly to theoretical trade-offs established in differential privacy literature (Wei et al., 2020 \cite{wei2020federated}; Yousefpour et al., 2021 \cite{yousefpour2021opacus}).
-    \item \textbf{Privacy Guarantee:} The privacy accountant certifies a cumulative budget of $\epsilon = 5.07$ with $\delta = 10^{-5}$ across all participating hospital nodes, providing mathematical immunity against gradient reconstruction and membership inference attacks.
-    \item \textbf{Threshold Calibration:} Under DP-SGD, output logits experience a baseline shift toward the majority class. Evaluating the model at the optimal Youden's threshold ($J = 0.97$) recovers an optimal diagnostic accuracy of $70.67\%$ and an F1-score of $0.6964$.
+    \item \textbf{Privacy Utility Cost of DP-SGD:} Addition of Gaussian noise with respect to the clipping operation decreases the model’s accuracy by $16.19\%$ (from $86.86\%$ to $70.67\%$). This is in line with trade-offs derived from the theory of differential privacy (Wei et al., 2020 \cite{wei2020federated}; Yousefpour et al., 2021 \cite{yousefpour2021opacus}).
+    \item \textbf{Differential Privacy Budget:} The privacy budget assigned by the privacy accountant is equal to $\epsilon = 5.07$ and $\delta = 10^{-5}$ for all hospital nodes, which provides immunity mathematically against any gradient inference attacks.
+    \item \textbf{Optimal Threshold:} In the case of DP-SGD, output logits get shifted towards the majority class. An evaluation at the optimal Youden's threshold ($J = 0.97$) yields an optimal diagnosis accuracy of $70.67\%$ and F1-score of $0.6964$.
 \end{itemize}
 
 \section{Qualitative Analysis and Case Studies}
-To evaluate the qualitative clinical performance of the trained global model, inference was performed across representative test cases from the held-out patient cohort:
+For qualitative assessment of clinical performance of the trained global model, inference was done on test cases representative of patients in the held-out group:
 \begin{itemize}
-    \item \textbf{Case Study 1 (Patient Record \#15, True Label: Pneumonia):} The radiograph exhibited characteristic bilateral diffuse infiltrates. The model output a predicted pneumonia probability of $94.32\%$ (confidence: $94.32\%$), correctly matching the clinical diagnosis.
-    \item \textbf{Case Study 2 (Patient Record \#42, True Label: Normal):} The radiograph displayed clear costophrenic angles and normal bronchovascular markings. The model predicted pneumonia probability was $18.67\%$, classifying the patient as Normal with $81.33\%$ confidence.
-    \item \textbf{Case Study 3 (Challenging Borderline Sample \#108, True Label: Normal):} The radiograph showed minor pediatric motion artifact resembling consolidation. The model predicted a pneumonia probability of $52.1\%$, resulting in a borderline false positive under the default $0.5$ threshold, but correctly resolved under optimal threshold calibration ($J = 0.63$).
+    \item \textbf{Case Study 1 (Pneumonia Patient Record \#15):} The radiograph showed distinctive bilateral diffuse infiltrates. The prediction provided by the model gave the probability of pneumonia as $94.32\%$ (confidence: $94.32\%$).
+    \item \textbf{Case Study 2 (Normal Patient Record \#42):} The radiograph showed distinct costophrenic angles and normal bronchovascular markings. The model gave a probability of pneumonia as $18.67\%$ and classified the patient as Normal with confidence of $81.33\%$.
+    \item \textbf{Case Study 3 (Borderline Sample \#108):} The radiograph had slight pediatric motion artifact suggestive of consolidation. The model had given the probability of pneumonia as $52.1\%$. This was a borderline case of false positive based on default threshold of $0.5$, however correct on optimal threshold calibration ($J = 0.63$).
 \end{itemize}
 
 \section{Error Analysis and Limitations}
-Detailed error analysis of misclassified samples revealed the following limitations:
+Error analysis on misclassified samples uncovered the following issues:
 \begin{enumerate}
-    \item \textbf{Resolution Constraints ($28 \times 28$):} While $28 \times 28$ resolution enables rapid decentralized simulation, subtle radiologic markers (such as early-stage interstitial viral markings) can be degraded by aggressive spatial downsampling.
-    \item \textbf{Client Drift under Extreme Non-IID ($\alpha = 0.1$):} When hospital nodes possess exclusively one class, local gradients pull the model toward extreme classification boundaries. Although FedProx proximal penalty mitigates drift, convergence requires approximately $2.5\times$ more communication rounds compared to moderate skew ($\alpha = 0.5$).
-    \item \textbf{Client Dropout Simulation:} The current SecAgg simulation assumes all $K$ clients remain online throughout the aggregation round. In wireless or unreliable networks, robust threshold secret recovery (e.g., Shamir secret sharing) is required to handle client disconnects.
+    \item \textbf{Resolution Limitations ($28 \times 28$):} While resolution of $28 \times 28$ allows for fast decentralized computation, fine radiological features (like early-stage interstitial viral markings) may be distorted by aggressive spatial downsampling.
+    \item \textbf{Client Drift in the Extreme Non-IID Case ($\alpha = 0.1$):} In the case of hospital nodes being limited to just one class, local gradients drive the model to classify at extreme boundaries. Though FedProx proximal penalty reduces drift, convergence is achieved in $2.5 \times$ more rounds of communication than in the case of moderate skewing ($\alpha = 0.5$).
+    \item \textbf{Client Dropout Simulation:} The existing simulation of SecAgg relies on $K$ clients being present through the whole aggregation round. In case of wireless networks, secure and robust threshold-based secret recovery (such as Shamir secret sharing) should be used.
 \end{enumerate}
 
 % ----------------------------------------------------------------------
@@ -635,31 +572,31 @@ Detailed error analysis of misclassified samples revealed the following limitati
 \label{chap:conclusion}
 
 \section{Summary of Key Findings}
-This M.Tech project successfully conceptualized, built, and evaluated an end-to-end Privacy-Preserving Federated Learning (PPFL) framework for collaborative healthcare diagnostics. The principal conclusions derived from this work are:
+This M.Tech project has been able to develop a complete system for privacy-preserving federated learning (PPFL). The main conclusions that have been drawn from this research are:
 \begin{enumerate}
-    \item \textbf{Decentralized Feasibility:} Multiple healthcare institutions can train high-accuracy clinical diagnostic algorithms collaboratively without centralizing sensitive electronic health records or medical imagery.
-    \item \textbf{Cryptographic Exactness:} Resolving the weighted Secure Aggregation masking defect is vital: local pre-weighting ensures zero-sum mask cancellation across unequal hospital cohorts, preventing destructive parameter degradation.
-    \item \textbf{Diagnostic Excellence:} Combining Group Normalization, inverse-frequency class weighting, and clinical data augmentations achieved \textbf{86.86\% diagnostic accuracy}, \textbf{0.9273 AUROC}, and \textbf{0.8603 Macro F1} on pediatric pneumonia radiographs.
-    \item \textbf{Rigorous Privacy Guarantees:} Integrating DP-SGD provides provable, mathematically verified $(\epsilon \le 5.07, \delta = 10^{-5})$ differential privacy bounds, ensuring resilience against gradient inversion and membership inference attacks.
+    \item \textbf{Decentralized Feasibility:} Several different healthcare organizations could train clinical diagnostic models with high accuracy together without needing to share their private EHRs or images.
+    \item \textbf{Cryptographic Accuracy:} Overcoming the problem with weighted Secure Aggregation's masking algorithm is crucial: the local pre-weighting guarantees that the zero-sum mask cancellation occurs for unbalanced hospital samples, avoiding parameter corruption.
+    \item \textbf{Diagnostic Accuracy:} The combination of Group Normalization, inverse frequency class weighting, and clinical data augmentations allowed us to reach \textbf{86.86\% accuracy}, \textbf{0.9273 AUROC}, and \textbf{0.8603 Macro F1} on pediatric pneumonia X-ray images.
+    \item \textbf{Mathematical Differential Privacy:} Including DP-SGD allows proving mathematical $(\epsilon \le 5.07, \delta = 10^{-5})$ differential privacy guarantees, protecting against gradient and membership attacks.
 \end{enumerate}
 
 \section{Contributions to the Field}
-This research provides a fully realized, reproducible framework bridging the gap between theoretical federated privacy literature and real-world clinical deployment constraints. By providing a clean PyTorch/Opacus implementation coupled with an interactive Streamlit diagnostic platform, this project contributes an accessible engineering benchmark for privacy-preserving digital health networks.
+This research project offers a comprehensive, reproducible approach which will help in closing the gap between theoretical federated privacy literature and clinical deployment limitations. This is due to the fact that this project provides a clear PyTorch/Opacus implementation combined with a Streamlit diagnosis interface.
 
 \section{Limitations of the Study}
 \begin{itemize}
-    \item The empirical evaluation was conducted on a single modality (pediatric chest radiographs) at $28 \times 28$ spatial resolution.
-    \item Cryptographic pairwise masking was simulated on a single computational workstation rather than across physically distributed, latency-constrained wide-area networks.
-    \item The framework addresses horizontal federated learning (shared feature space, different patients); vertical federated learning (different clinical features for the same patient) was not explored.
+    \item The empirical study was carried out using one type of data only (children’s chest radiographs) with spatial resolution of $28 \times 28$ pixels.
+    \item Masking through cryptography was simulated on a single workstation rather than being distributed across wide-area networks with limited physical distance and latency.
+    \item The presented framework solves the problem of horizontal federated learning (common feature space and different patients); vertical federated learning was not considered.
 \end{itemize}
 
 \section{Scope for Future Research and Improvements}
-Promising avenues for future expansion include:
+Future expansion opportunities may involve:
 \begin{enumerate}
-    \item \textbf{High-Resolution Medical Imaging:} Scaling the architecture to native $512 \times 512$ chest radiographs using Vision Transformers (ViT) or parameter-efficient fine-tuning (LoRA / Adapters).
-    \item \textbf{Multi-Modal Clinical Fusion:} Expanding the input pipeline to fuse multimodal electronic health records (laboratory blood panels, patient vitals, clinical notes) with diagnostic imagery using multi-modal transformers.
-    \item \textbf{Personalized Federated Learning (pFL):} Incorporating meta-learning (MAML) or local adaptation heads to allow individual hospital centers to tailor the global consensus model to local demographic specifics.
-    \item \textbf{Hardware-Enforced Enclaves:} Implementing trusted execution environments (Intel SGX, ARM TrustZone) to provide physical defense against compromised client hypervisors.
+    \item \textbf{High-Resolution Medical Imaging:} Up-scaling the network to the full native resolution of $512 \times 512$ chest x-rays by using Vision Transformer models (ViTs) or LoRA/Adapter parameter-efficient fine-tuning.
+    \item \textbf{Multi-Modal Clinical Fusion:} Extending the input module to integrate multimodal electronic health records (blood tests, vital signs, clinical text) with imaging using multi-modal transformers.
+    \item \textbf{Personalized Federated Learning (pFL):} Including meta-learning (MAML) or adaptation heads to let each participating hospital customize the global consensus model to the demographic features of their local population.
+    \item \textbf{Enclaved Hardware:} Using trusted execution environments (Intel SGX, ARM TrustZone) to ensure that the system is protected physically from attacks on the client's hypervisor.
 \end{enumerate}
 
 % ----------------------------------------------------------------------
@@ -842,34 +779,34 @@ Z.~Zheng, Y.~Zhou, Y.~Sun, Z.~Wang, B.~Liu, and K.~Li,
 \label{app:math_derivations}
 
 \section{R\'enyi Differential Privacy (RDP) Composition}
-The Rényi divergence of order $\alpha > 1$ between distributions $P$ and $Q$ is defined as:
+The R\'enyi divergence of order $\alpha > 1$ for distributions $P$ and $Q$ is given by
 \begin{equation}
     D_\alpha(P \| Q) = \frac{1}{\alpha - 1} \log \int \left( \frac{P(x)^\alpha}{Q(x)^{\alpha - 1}} \right) dx
 \end{equation}
-A randomized mechanism $\mathcal{M}$ satisfies $(\alpha, \epsilon)$-RDP if for all neighboring datasets $D, D'$:
+A randomized mechanism $\mathcal{M}$ obeys ($\alpha, \epsilon$)-RDP if for any pair of neighboring data sets $D, D'$:
 \begin{equation}
     D_\alpha(\mathcal{M}(D) \| \mathcal{M}(D')) \le \epsilon
 \end{equation}
-For a Gaussian mechanism with noise multiplier $\sigma = \frac{\sigma_{\text{raw}}}{C}$, the RDP guarantee is analytically expressed as:
+For a Gaussian mechanism with noise multiplier $\sigma=\frac{\sigma_{\text{raw}}}{C}$, the RDP guarantee is mathematically formulated as:
 \begin{equation}
     \epsilon(\alpha) = \frac{\alpha}{2 \sigma^2}
 \end{equation}
-Under $T$ composition rounds and sub-sampling ratio $q = \frac{B}{N}$, the cumulative RDP expands as:
+Under $T$ composition steps and sub-sampling rate $q = \frac{B}{N}$, the total RDP scales as:
 \begin{equation}
     \epsilon_{\text{total}}(\alpha) \le T \cdot \left( \frac{q^2 \alpha}{\sigma^2} + \mathcal{O}(q^3 \alpha^{1.5}) \right)
 \end{equation}
-The conversion from $(\alpha, \epsilon_{\text{total}}(\alpha))$-RDP to conventional $(\epsilon, \delta)$-DP follows:
+Conversion from $(\alpha, \epsilon_{\text{total}}(\alpha))$-RDP to traditional $(\epsilon, \delta)$-DP is as follows:
 \begin{equation}
     \epsilon(\delta) = \min_{\alpha > 1} \left\{ \epsilon_{\text{total}}(\alpha) + \frac{\log(1/\delta)}{\alpha - 1} \right\}
 \end{equation}
-This conversion is calculated in real time by the Opacus privacy engine at every communication round.
+It is computed in real time using the Opacus privacy engine at each communication round.
 
 \newpage
 \chapter{Core Source Code Implementations}
 \label{app:code_snippets}
 
 \section{Secure Aggregation Masking Protocol (\texttt{secure\_aggregation.py})}
-The following listing demonstrates the verified pre-weighted pairwise masking protocol:
+Below is the listing showing the tested pre-weighted pairwise masking approach:
 
 \begin{small}
 \begin{verbatim}
@@ -940,11 +877,11 @@ class PneumoniaCNN(nn.Module):
 \chapter{Complete Experimental Progression Logs}
 \label{app:logs}
 
-Table~\ref{tab:complete_round_logs} records the complete per-round diagnostic metrics recorded during experimentation.
+Table~\ref{tab:complete_round_logs} captures the comprehensive set of diagnostics logged per round during the experimentations.
 
 \begin{table}[htbp]
 \centering
-\caption{Comprehensive Multi-Round Diagnostic Metrics Log}
+\caption{Multi-round Diagnostics Testing Log}
 \label{tab:complete_round_logs}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{cccccccc}
